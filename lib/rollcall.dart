@@ -1,24 +1,12 @@
 // Absence presence system
 
-enum UserType { TEACHER, STUDENT }
+import 'package:online_room/user.dart';
 
 class RollCall {
   final int passedTime;
-  final UserType userType;
+  final User user;
 
-  RollCall(this.passedTime, this.userType);
+  RollCall(this.passedTime, this.user);
 
-  bool userIsAbsent() {
-    if (userType == UserType.TEACHER) {
-      if (passedTime > 20) {
-        return true;
-      }
-    } else {
-      if (passedTime > 10) {
-        return true;
-      }
-    }
-
-    return false;
-  }
+  bool isUserAbsent() => user.isUserAbsent(passedTime);
 }

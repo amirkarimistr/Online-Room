@@ -1,4 +1,3 @@
-import 'package:online_room/rollcall.dart';
 import 'package:online_room/user.dart';
 
 class Board {
@@ -9,7 +8,7 @@ class Board {
     if (user.isAllowedToWriteOnBoard()) {
       return text;
     } else {
-      throw Exception('Message ');
+      throw Exception('Not allow to write on board');
     }
   }
 }

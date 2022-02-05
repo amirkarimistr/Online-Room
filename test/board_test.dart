@@ -25,5 +25,16 @@ void main() {
 
       expect(() => sut.write(preparedText), throwsException);
     });
+
+    // Fact
+    test('If_the_teacher_allows_the_student_can_write_on_the_board', () {
+      const preparedText = "Hello I'm student";
+      final User student = Student(name: 'Reza', allowedToWrite: true);
+      final sut = Board(student);
+
+      expect(sut.write(preparedText), preparedText);
+    });
+
+
   });
 }

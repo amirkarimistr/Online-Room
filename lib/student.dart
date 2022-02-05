@@ -10,4 +10,7 @@ class Student extends User {
   bool isAllowedToWriteOnBoard() {
     return allowedToWrite ? true: false;
   }
+
+  @override
+  bool isUserAbsent(int passedTime) => passedTime > 10;
 }
