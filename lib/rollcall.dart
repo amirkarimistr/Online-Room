@@ -8,5 +8,5 @@ class RollCall {
 
   RollCall(this.passedTime, this.user);
 
-  bool isUserAbsent() => user.isUserAbsent(passedTime);
+  bool isUserAbsent() => user.isUserLateIntoClass(passedTime);
 }

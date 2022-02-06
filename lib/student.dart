@@ -2,7 +2,8 @@ import 'package:online_room/user.dart';
 
 class Student extends User {
   final String name;
-  final bool allowedToWrite;
+  bool allowedToWrite;
+  bool hasRequestToWrite = false;
 
   Student({required this.name, this.allowedToWrite = false});
 
@@ -11,6 +12,10 @@ class Student extends User {
     return allowedToWrite ? true: false;
   }
 
+  void requestToWriteOnBoard(){
+    hasRequestToWrite = true;
+  }
+
   @override
-  bool isUserAbsent(int passedTime) => passedTime > 10;
+  bool isUserLateIntoClass(int passedTime) => passedTime > 10;
 }
