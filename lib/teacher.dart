@@ -6,19 +6,13 @@ class Teacher extends User {
 
   Teacher(this.name);
 
+  bool acceptRequest(Student student){
+    return student.hasRequestToWrite;
+  }
+
   @override
   bool isAllowedToWriteOnBoard() {
     return true;
-  }
-
-  bool allowToWriteOnBoard(Student student) {
-    student.allowedToWrite = student.hasRequestToWrite ? true : false;
-    return student.isAllowedToWriteOnBoard();
-  }
-
-  bool denyToWriteOnBoard(Student student) {
-    student.allowedToWrite = false;
-    return student.isAllowedToWriteOnBoard();
   }
 
   @override
